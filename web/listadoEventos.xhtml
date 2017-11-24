@@ -7,30 +7,38 @@
         <title>Listado Eventos</title>
     </h:head>
     <h:body>
-        <h:dataTable value="#" var="evento">
+        <h:dataTable value="#{sessionBean.listaEventoAMostrar}" var="evento">
             <h:column>
-                <f:facet name="header"></f:facet>
+                <f:facet name="header">Nombre</f:facet>
+                    #{evento.nombre}
             </h:column>
             <h:column>
-                <f:facet name="header"></f:facet>
+                <f:facet name="header">Descripcion</f:facet>
+                #{evento.descripcion}
             </h:column>
             <h:column>
-                <f:facet name="header"></f:facet>
+                <f:facet name="header">FechaInicio</f:facet>
+                #{evento.fechainicio}
             </h:column>
             <h:column>
-                <f:facet name="header"></f:facet>
+                <f:facet name="header">FechaFin</f:facet>
+                #{evento.fechafin}
             </h:column>
             <h:column>
-                <f:facet name="header"></f:facet>
+                <f:facet name="header">Latitud</f:facet>
+                #{evento.latitud}
             </h:column>
             <h:column>
-                <f:facet name="header"></f:facet>
+                <f:facet name="header">Longitud</f:facet>
+                #{evento.longitud}
             </h:column>
             <h:column>
-                <f:facet name="header"></f:facet>
+                <f:facet name="header">Validado</f:facet>
+                 #{evento.isValidado()}
             </h:column>
             <h:column>
-                <f:facet name="header"></f:facet>
+                <f:facet name="header">Creador</f:facet>
+                #{evento.creador.email}
             </h:column>
         </h:dataTable>
     </h:body>

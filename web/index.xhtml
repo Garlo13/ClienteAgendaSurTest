@@ -8,32 +8,32 @@
     <h:body>
         <h2>Operaciones Servicio</h2>
         <h:form>
-            <h:commandButton value="findAllEventoValidadosYNoCaducados" action="#"/>
-            <h:commandButton value="findAllEventoNoValidados" action="#"/>
-            <h:commandButton value="findEventosOrdenadosPorDistancia" action="#"/>
-            <h:commandButton value="findEventosByTags" action="#"/>
-            <h:commandButton value="findEvento" action="#"/>
-            <h:outputText>Nombre evento</h:outputText>
-            <h:commandButton value="findTagsEvento" action="#"/>
-            <h:commandButton value="findTagsUsuario" action="#"/>
-            <h:commandButton value="findAllTags" action="#"/>
-            <h:commandButton value="findUsuario" action="#"/>
-            <h:outputText>Nombre usuario</h:outputText>
-            <h:commandButton value="findTag" action="#"/>
-            <h:outputText>Nombre tag</h:outputText>
-            <h:commandButton value="editTag" action="#"/>      
-            <h:commandButton value="findComentariosEvento" action="#"/>
-            <h:commandButton value="createEvento" action="#"/>
-            <h:commandButton value="editEvento" action="#"/>
-            <h:commandButton value="asignarTagsAEvento" action="#"/>
-            <h:commandButton value="removeEvento" action="#"/>
-            <h:commandButton value="asignarTagsAUsuario" action="#"/>
-            <h:commandButton value="darMeGusta" action="#"/>
-            <h:commandButton value="existeMeGusta" action="#"/>
-            <h:commandButton value="validarEvento" action="#"/>
-            <h:commandButton value="createComentario" action="#"/>
-            <h:commandButton value="editUsuario" action="#"/>
-            <h:commandButton value="sendEmail" action="#"/>
+            <h:commandButton value="findAllEventoValidadosYNoCaducados" action="#{sessionBean.findEventosNoCaducadosYValidados()}"/><br/>
+            <h:commandButton value="findAllEventoNoValidados" action="#{sessionBean.findEvetnosNoValidados()}"/><br/>
+            <h:commandButton value="findEventosOrdenadosPorDistancia" action="#{sessionBean.findEventosOrdenadosPorDistancia(longitud, latitud)}"/><br/>
+            <h:commandButton value="findEventosByTags" action="#{sessionBean.findEventosByTag()}"/><br/>
+            <h:commandButton value="findEvento" action="#"/><br/>
+            <h:outputText>Nombre evento</h:outputText><br/>
+            <h:commandButton value="findTagsEvento" action="#"/><br/>
+            <h:commandButton value="findTagsUsuario" action="#"/><br/>
+            <h:commandButton value="findAllTags" action="#"/><br/>
+            <h:commandButton value="findUsuario" action="#"/><br/>
+            <h:outputText>Nombre usuario</h:outputText><br/>
+            <h:commandButton value="findTag" action="#"/><br/>
+            <h:outputText>Nombre tag</h:outputText><br/>
+            <h:commandButton value="editTag" action="#"/> <br/>     
+            <h:commandButton value="findComentariosEvento" action="#"/><br/>
+            <h:commandButton value="createEvento" action="#"/><br/>
+            <h:commandButton value="editEvento" action="#"/><br/>
+            <h:commandButton value="asignarTagsAEvento" action="#"/><br/>
+            <h:commandButton value="removeEvento" action="#"/><br/>
+            <h:commandButton value="asignarTagsAUsuario" action="#"/><br/>
+            <h:commandButton value="darMeGusta" action="#"/><br/>
+            <h:commandButton value="existeMeGusta" action="#"/><br/>
+            <h:commandButton value="validarEvento" action="#"/><br/>
+            <h:commandButton value="createComentario" action="#"/><br/>
+            <h:commandButton value="editUsuario" action="#"/><br/>
+            <h:commandButton value="sendEmail" action="#"/><br/>
         </h:form>
     </h:body>
 </html>
