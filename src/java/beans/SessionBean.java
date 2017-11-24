@@ -141,17 +141,17 @@ public class SessionBean implements Serializable {
         return "listadoTags";
     }
     
-    public String findTagService(){
+    public String findTag(){
         this.tag = this.findTagService("Sport");
         return null;
     }
     
-    public String findUsuarioService(){
+    public String findUsuario(){
         this.usuario = this.findUsuarioService("david_92.8@hotmail.com");
         return null;
     }
     
-    public String findEventoService(){
+    public String findEvento(){
         this.evento = this.findEventoService(1);
         return null;
     }
