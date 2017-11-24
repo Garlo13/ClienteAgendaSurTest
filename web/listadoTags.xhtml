@@ -7,10 +7,10 @@
         <title>Listado Tags</title>
     </h:head>
     <h:body>
-        <h:dataTable value="#" var="tag">
+        <h:dataTable value="#{sessionBean.listaTagsAMostrar}" var="tag">
             <h:column>
                 <f:facet name="header">Nombre</f:facet>
-                tag.nombre
+                #{tag.nombre}
             </h:column>
         </h:dataTable>
     </h:body>
