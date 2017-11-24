@@ -44,6 +44,14 @@ public class SessionBean implements Serializable {
     public SessionBean() {
     }
     
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+    
     public List<Tag> getListaTagsAMostrar() {
         return listaTagsAMostrar;
     }
