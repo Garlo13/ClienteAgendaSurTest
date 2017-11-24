@@ -24,17 +24,15 @@
             <h:commandButton value="findComentariosEvento" action="#{sessionBean.findComentariosEvento()}"/><br/>
             <h:commandButton value="existeMeGusta" action="#{sessionBean.existeMeGusta()}"/><br/>
             Existe me gusta en evento 1: #{sessionBean.meGusta}<br/> 
-            <h:commandButton value="editTag" action="#"/> <br/>     
-            <h:commandButton value="createEvento" action="#"/><br/>
-            <h:commandButton value="editEvento" action="#"/><br/>
-            <h:commandButton value="asignarTagsAEvento" action="#"/><br/>
-            <h:commandButton value="removeEvento" action="#"/><br/>
-            <h:commandButton value="asignarTagsAUsuario" action="#"/><br/>
-            <h:commandButton value="darMeGusta" action="#"/><br/>
-            <h:commandButton value="validarEvento" action="#"/><br/>
-            <h:commandButton value="createComentario" action="#"/><br/>
-            <h:commandButton value="editUsuario" action="#"/><br/>
-            <h:commandButton value="sendEmail" action="#"/><br/>
+            <h:commandButton value="createEvento" action="#{sessionBean.createEvento()}"/><br/>
+            <h:commandButton value="editEvento" action="#{sessionBean.editEvento()}"/><br/>
+            <h:commandButton value="asignarTagsAEvento" action="#{sessionBean.asignarTagsAEvento()}"/><br/>
+            <h:commandButton value="removeEvento" action="#{sessionBean.removeEvento()}"/><br/>
+            <h:commandButton value="asignarTagsAUsuario" action="#{sessionBean.asignarTagsAUsuario()}"/><br/>
+            <h:commandButton value="darMeGusta" action="#{sessionBean.darMeGusta()}"/><br/>
+            <h:commandButton value="validarEvento" action="#{sessionBean.validarEvento()}"/><br/>
+            <h:commandButton value="createComentario" action="#{sessionBean.createComentario()}"/><br/>
+            <h:commandButton value="sendEmail" action="#{sessionBean.sendEmail()}"/><br/>
         </h:form>
     </h:body>
 </html>
