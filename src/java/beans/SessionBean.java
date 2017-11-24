@@ -42,20 +42,24 @@ public class SessionBean implements Serializable {
         this.listaEventoAMostrar = listaEventoAMostrar;
     }
     
-    public void findEventosNoCaducadosYValidados(){
+    public String findEventosNoCaducadosYValidados(){
         this.listaEventoAMostrar = findEventosNoCaducadosYValidadosService();
+        return "listadoEventos";
     }
     
-    public void findEvetnosNoValidados(){
+    public String findEvetnosNoValidados(){
         this.listaEventoAMostrar = findEventosNoValidadosService();
+        return "listadoEventos";
     }
     
-    public void findEventosOrdenadosPorDistancia(double longitud, double latitud){
+    public String findEventosOrdenadosPorDistancia(double longitud, double latitud){
         this.listaEventoAMostrar = findEventosOrdenadosPorDistanciaService(longitud, latitud);
+        return "listadoEventos";
     }
     
-    public void findEventosByTag(Tag tag){
-        this.listaEventoAMostrar = findEventosByTagService(tag);
+    public String findEventosByTag(){
+        this.listaEventoAMostrar = findEventosByTagService(this.findAllTag().get(0));
+        return "listadoEventos";
     }
     
 
@@ -85,6 +89,13 @@ public class SessionBean implements Serializable {
         // If the calling of port operations may lead to race condition some synchronization is required.
         client.AgendaSurService port = service.getAgendaSurServicePort();
         return port.findEventosByTag(arg0);
+    }
+
+    private java.util.List<client.Tag> findAllTag() {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        client.AgendaSurService port = service.getAgendaSurServicePort();
+        return port.findAllTag();
     }
     
     
