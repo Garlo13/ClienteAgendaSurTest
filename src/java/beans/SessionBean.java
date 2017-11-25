@@ -138,7 +138,7 @@ public class SessionBean implements Serializable {
     }
     
     public String findEventosByTag(){
-        this.listaEventoAMostrar = findEventosByTagService(this.findAllTagService().get(0));
+        this.listaEventoAMostrar = findEventosByTagService(this.findAllTagService().get(5));
         return "listadoEventos";
     }
     /*
@@ -298,7 +298,7 @@ public class SessionBean implements Serializable {
         e.setLongitud((float) 0.5);
         e.setLatitud((float) 0.6);
         e.setValidado(false);
-        e.setCreador(this.findUsuarioService("cardenita96@gmail.com"));
+        e.setCreador(this.findUsuarioService("cardenitas96@gmail.com"));
         this.createEventoService(e);
         return null;
     }
@@ -336,10 +336,10 @@ public class SessionBean implements Serializable {
         comentario.setComentario("Comentario de prueba");
         comentario.setFecha("2017-11-25 10:44:13");
         ComentarioPK pk = new ComentarioPK();
-        pk.setEventoId(1);
+        pk.setEventoId(this.listaEventoAMostrar.get(0).getId());
         pk.setUsuarioEmail("david_92.8@hotmail.com");
         comentario.setComentarioPK(pk);
-        comentario.setEvento(findEventoService(1));
+        comentario.setEvento(this.listaEventoAMostrar.get(0));
         comentario.setUsuario(findUsuarioService("david_92.8@hotmail.com"));
         this.createComentarioService(comentario);
         return null;
