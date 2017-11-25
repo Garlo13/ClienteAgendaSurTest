@@ -7,6 +7,7 @@ package beans;
 
 import client.AgendaSurService_Service;
 import client.Comentario;
+import client.ComentarioPK;
 import client.Evento;
 import client.Tag;
 import client.Usuario;
@@ -150,8 +151,7 @@ public class SessionBean implements Serializable {
     }
     
     public String findTagsEvento(){
-        this.listaTagsAMostrar = this.findTagsEventoService(
-                this.listaEventoAMostrar.get(this.listaEventoAMostrar.size()-1).getId());
+        this.listaTagsAMostrar = this.findTagsEventoService(1);
         return "listadoTags";
     }
     
@@ -320,6 +320,35 @@ public class SessionBean implements Serializable {
         this.removeEventoService(this.findEventosNoValidadosService().get(0));
         return null;
     }
+    
+    public String darMeGusta(){
+        this.darMeGustaService(findEventoService(1), findUsuarioService("david_92.8@hotmail.com"));
+        return null;
+    }
+    
+    public String validarEvento(){
+        this.validarEventoService(this.findEventosNoValidadosService().get(0).getId());
+        return null;
+    }
+    
+    public String createComentario(){
+        Comentario comentario = new Comentario();
+        comentario.setComentario("Comentario de prueba");
+        comentario.setFecha("2017-11-25 10:44:13");
+        ComentarioPK pk = new ComentarioPK();
+        pk.setEventoId(1);
+        pk.setUsuarioEmail("david_92.8@hotmail.com");
+        comentario.setComentarioPK(pk);
+        comentario.setEvento(findEventoService(1));
+        comentario.setUsuario(findUsuarioService("david_92.8@hotmail.com"));
+        this.createComentarioService(comentario);
+        return null;
+    }
+    
+    public String sendMail(){
+        this.sendMailService(1);
+        return null;
+    } 
 
     private void editEventoService(client.Evento entity) {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
