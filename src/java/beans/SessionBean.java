@@ -133,7 +133,7 @@ public class SessionBean implements Serializable {
     }
     
     public String findEventosOrdenadosPorDistancia(){
-        this.listaEventoAMostrar = findEventosOrdenadosPorDistanciaService(longitud, latitud);
+        this.listaEventoAMostrar = findEventosOrdenadosPorDistanciaService(longitud,latitud);
         return "listadoEventos";
     }
     
@@ -156,7 +156,7 @@ public class SessionBean implements Serializable {
     }
     
     public String findTagsUsuario(){
-        this.listaTagsAMostrar = this.findTagsUsuarioService("cardentias96@gmail.com");
+        this.listaTagsAMostrar = this.findTagsUsuarioService("cardenitas96@gmail.com");
         return "listadoTags";
     }
     
